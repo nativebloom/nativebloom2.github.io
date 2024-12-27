@@ -11,6 +11,7 @@ GEM
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
     ffi (1.17.0-x64-mingw-ucrt)
+    fortyone-jekyll-theme (1.2.3)
     forwardable-extended (2.6.0)
     google-protobuf (4.29.2-x64-mingw-ucrt)
       bigdecimal
@@ -81,6 +82,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  fortyone-jekyll-theme
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.3.4)
   jekyll-feed (~> 0.12)
