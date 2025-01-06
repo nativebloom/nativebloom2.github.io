@@ -9,6 +9,6 @@ tiles-count: 4
 title: Homepage
 landing-title: "Test site"
 description: Official test site of the Native Bloom Initiative
-image: images/homepage.jpg
+image: images/field.jpg
 ---
 ABC
