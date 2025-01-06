@@ -23,7 +23,7 @@ email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   The Native Bloom Initiative is a non-profit organization based in New Jersey
   with the goal of restoring native polinator species to the area.
-#baseurl: "/nativebloom2.github.io"
+baseurl: "/nativebloom2"
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
