@@ -1,0 +1,27 @@
+<section id="banner" class="style{{ page.style }}">
+  <div class="inner">
+    {% if include.item.image %}
+      <span class="image">
+        <img src="{{ include.item.image | absolute_url }}" alt=""/>
+      </span>
+    {% endif %}
+
+    <header class="major">
+      <h1>{{ include.item.title }}</h1>
+    </header>
+
+    <div class="content">
+      {{ include.item.content | markdownify }}
+
+      {% if include.item.link_url %}
+        <ul class="actions">
+          <li>
+            <a href="{{ include.item.link_url }}" class="button">
+              {{ include.item.link_text }}       
+            </a>
+          </li>
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</section>

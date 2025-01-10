@@ -1,0 +1,14 @@
+<ul class="copyright">
+  <li>&copy; {{ site.title }} {{ site.subtitle }}</li>
+  {% for item in include.items %}
+    <li>
+      {% if item.title %}
+        {{ item.title | markdownify  | remove: '<p>' | remove: '</p>' }}
+      {% endif %}
+
+      {% if item.txt %}
+        {{ item.txt | markdownify  | remove: '<p>' | remove: '</p>' }}<br/>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

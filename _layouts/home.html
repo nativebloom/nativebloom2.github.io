@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<section id="banner" class="major">
+  <div class="inner">
+    <header class="major">
+      <h1>{{ page.landing-title }}</h1>
+    </header>
+
+    <div class="content">
+      <p style="text-transform: uppercase;">
+        {% if page.description %}
+          {{ page.description }}
+        {% else %}
+          {{ site.description }}
+        {% endif %}
+      </p>
+
+      {% if page.banner_cta %}
+        <ul class="actions">
+          <li>
+            <a href="{{ page.banner_cta.href }}" class="button next scrolly">
+              {{ page.banner_cta.text }}
+            </a>
+          </li>
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<div id="main">
+  {% include _home_tiles.html %}
+
+  <section id="two">
+    <div class="inner">
+      <header class="major">
+        <h2>{{ page.title }}</h2>
+      </header>
+
+      <p>{{ content }}</p>
+
+      {% if page.section_cta %}
+        <ul class="actions">
+          <li>
+            <a href="{{ page.section_cta.href }}" class="button next">
+              {{ page.section_cta.text }}
+            </a>
+          </li>
+        </ul>
+      {% endif %}
+    </div>
+  </section>
+</div>

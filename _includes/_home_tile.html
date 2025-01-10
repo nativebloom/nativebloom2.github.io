@@ -1,0 +1,15 @@
+<article>
+  <span class="image">
+    <img src="{{ include.item.image | absolute_url }}" alt="" />
+  </span>
+
+  <header class="major">
+    <h3>
+      <a href="{{ include.item.url  | absolute_url }}" class="link">
+        {{ include.item.title }}
+      </a>
+    </h3>
+
+    <p>{{ include.item.description }}</p>
+  </header>
+</article>

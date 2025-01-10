@@ -1,0 +1,18 @@
+{% if page.previous.url or page.next.url %}
+  <nav class="pagination row 50% uniform">
+    {% if page.previous.url %}
+      <div class="6u 12u$(small)">
+        <a class="prev button fit" href="{{ page.previous.url | relative_url }}">
+          {{page.previous.title}}
+        </a>
+      </div>
+    {% endif %}
+    {% if page.next.url %}
+      <div class="6u$ 12u$(small)">
+        <a class="next button fit" href="{{ page.next.url | relative_url }}">
+          {{page.next.title}}
+        </a>
+      </div>
+    {% endif %}
+  </nav>
+{% endif %}

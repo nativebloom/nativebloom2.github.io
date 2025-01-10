@@ -1,0 +1,58 @@
+{% assign menu_home = site.pages | where: "layout", "home" | first %}
+{% assign menu_links = site.pages | where: "nav-menu", true | sort: 'order' %}
+{% assign menu_cta_links = site.pages | where: "nav-menu-cta", true | sort: 'order' %}
+
+<!-- Menu -->
+<nav id="menu">
+  {% if menu_home %}
+    <ul class="actions vertical">
+      <li>
+        <a href="{{ menu_home.url }}" class="button special fit small">
+          {{ menu_home.title }}
+        </a>
+      </li>
+    </ul>
+  {% endif %}
+
+  {% if menu_links %}
+  <ul class="links">
+    {% for link in menu_links %}
+      {% if link.title %}
+        <li>
+          <a href="{{ link.url | relative_url }}">
+            {{ link.title }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if menu_cta_links or site.nav-menu-cta %}
+  <ul class="actions vertical">
+    {% for link in menu_cta_links %}
+    <li>
+      <a href="{{ link.url | relative_url }}" class="button fit">
+        {{ link.title }}
+      </a>
+    </li>
+    {% endfor %}
+
+    {% for link in site.nav-menu-cta %}
+      <li>
+        <a href="{{ link.url | relative_url }}" class="button fit">
+          {{ link.title }}
+        </a>
+      </li>
+    {% endfor %}
+
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url | relative_url }}" class="button fit">
+          {{ post.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</nav>

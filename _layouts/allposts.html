@@ -1,0 +1,25 @@
+---
+layout:   post
+---
+
+{% assign items = site.posts %}
+
+<div class="row">
+  {% for post in items %}
+    {% assign loopindex = forloop.index | modulo: 3 %}
+    {% if loopindex == 0 %}
+      <div class="4u$ 12u$(medium)">
+    {% else %}
+      <div class="4u 12u$(medium)">
+    {% endif %}
+      <a href="{{ post.url | relative_url }}">
+        <div class="box">
+          <h3>{{ post.title }}</h3>
+          {% if post.date %}<p>{{ post.date | date_to_string }}</p>{% endif %}
+          {% if post.image %}<span class="image fit"><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></span>{% endif %}
+          <p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>

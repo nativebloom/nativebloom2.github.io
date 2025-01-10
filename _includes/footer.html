@@ -1,0 +1,130 @@
+<!-- Contact -->
+<!--<section id="contact">
+	<div class="inner">
+		<section>
+		    {% if site.data.labels.contact.title %}
+    		    <h3>
+    		        {% include _t.html
+    													label = site.data.labels.contact.title
+    													fallback = 'Contact' %}
+    		    </h3>
+		    {% endif %}
+
+		    {% if site.data.labels.contact.description %}
+    		    <p>
+    		        {% include _t.html
+    													label = site.data.labels.contact.description
+    													fallback = '' %}
+    		    </p>
+		    {% endif %}
+			<form method="POST" action="https://formspree.io/{{ site.email }}">
+				<div class="field half first">
+					<label for="name">
+						{% include _t.html
+													label = site.data.labels.contact.form.name
+													fallback = 'Name' %}
+					</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">
+						{% include _t.html
+													label = site.data.labels.contact.form.email
+													fallback = 'Email' %}
+					</label>
+					<input type="text" name="_replyto" id="email" />
+				</div>
+
+				<div class="field">
+					<label for="message">
+						{% include _t.html
+													label = site.data.labels.contact.form.message
+													fallback = 'Message' %}
+					</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+				</div>
+
+				<ul class="actions">
+					<li>
+						<button type="submit" class="special">
+							{% include _t.html
+													label = site.data.labels.contact.form.submit
+													fallback = 'Send' %}
+						</button>
+					</li>
+
+					<li>
+						<button type="reset">
+							{% include _t.html
+													label = site.data.labels.contact.form.clear
+													fallback = 'Clear' %}
+						</button>
+					</li>
+				</ul>
+			</form>
+		</section>
+
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+
+					<h3>
+						{% include _t.html
+												label = site.data.labels.contact.method.email
+												fallback = "Email" %}
+					</h3>
+
+					<a href="mailto:{{ site.email }}">
+						{{ site.email }}
+					</a>
+				</div>
+			</section>
+
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-phone"></span>
+
+					<h3>
+						{% include _t.html
+												label = site.data.labels.contact.method.phone
+												fallback = "Phone" %}
+					</h3>
+
+					<span>
+						{{ site.phone }}
+					</span>
+				</div>
+			</section>
+
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+
+					<h3>
+						{% include _t.html
+												label = site.data.labels.contact.method.address
+												fallback = "Address" %}
+					</h3>
+
+					<span>
+						{{ site.street_address }}<br />
+						{{ site.city }}, {{ site.state }} {{ site.zip_code }}<br />
+						{{ site.country }}
+					</span>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>-->
+
+{% include _nav_footer.html %}
+
+<!-- Scripts -->
+	<script src="{{ "assets/js/jquery.min.js" | absolute_url }}"></script>
+	<script src="{{ "assets/js/jquery.scrolly.min.js" | absolute_url }}"></script>
+	<script src="{{ "assets/js/jquery.scrollex.min.js" | absolute_url }}"></script>
+	<script src="{{ "assets/js/skel.min.js" | absolute_url }}"></script>
+	<script src="{{ "assets/js/util.js" | absolute_url }}"></script>
+	<!--[if lte IE 8]><script src="{{ "assets/js/ie/respond.min.js" | absolute_url }}"></script><![endif]-->
+	<script src="{{ "assets/js/main.js" | absolute_url }}"></script>

@@ -6,9 +6,9 @@ layout: home
 tiles-source: posts
 tiles-count: 4
 
-title: Homepage
-landing-title: "Test site"
-description: Official test site of the Native Bloom Initiative
+title: Home
+landing-title: "The Native Bloom Initiative"
+description: Our Mission is to provide sustainable natural ecosystems for local pollinator species by creating habitats on unused commercial and urban land around New Jersey.
 image: images/field.jpg
 ---
 ABC

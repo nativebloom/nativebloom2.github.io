@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+{% assign collection= site.collections | where: "label", page.collection | first %}
+{% assign items = collection.docs | sort: 'order' %}
+
+{% assign highlighted_items= items | where_exp: "item", "item.highlighted == true" %}
+{% assign downlighted_items= items | where_exp: "item", "item.downlighted == true" %}
+{% assign rest_of_items= items | where_exp: "item", "item.highlighted != true" | where_exp: "item", "item.downlighted != true" %}
+
+{% if highlighted_items %}
+  {% for high in highlighted_items %}
+    {% include _landing_highlighted_item.html item= high %}
+  {% endfor %}
+{% endif %}
+
+<!-- Two -->
+{% if rest_of_items %}
+  <section id="two" class="spotlights">
+    {% for item in rest_of_items %}
+      {% include _landing_item.html item= item %}
+    {% endfor %}
+  </section>
+{% endif %}
+
+<!-- Three -->
+{% if downlighted_items %}
+  {% for down in downlighted_items %}
+    {% include _landing_downlighted_item.html item= down %}
+  {% endfor %}
+{% endif %}
+
+<section>
+  <div class="inner">
+    {{ content }}
+  </div>
+</section>

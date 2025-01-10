@@ -1,0 +1,12 @@
+<!-- Header -->
+<header id="header"{% if page.layout == "landing" %} class="alt style{{ page.style }}"{% endif %}{% if page.layout == "home" %} class="alt"{% endif %}>
+	<a href="{{ "" | absolute_url }}/" class="logo"><strong>{{ site.title }}</strong> <span>{{ site.subtitle }}</span></a>
+	<nav>
+		<a href="#menu">
+			{% include _t.html 
+									label = site.data.labels.menu
+									fallback = 'Menu' %}
+		</a>
+	</nav>
+</header>
+{% include _nav_menu.html %}

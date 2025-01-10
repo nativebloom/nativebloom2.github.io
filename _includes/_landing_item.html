@@ -1,0 +1,31 @@
+<section>
+  {% if include.item.image %}
+    {% if include.item.link_url %}
+      <a href="{{ include.item.link_url || '#' }}" class="image">
+    {% endif %}
+      <img src="{{ include.item.image | absolute_url }}" alt="" data-position="center center" />
+    {% if include.item.link_url %}
+      </a>
+    {% endif %}
+  {% endif %}
+
+  <div class="content">
+    <div class="inner">
+      <header class="major">
+        <h3>{{ include.item.title }}</h3>
+      </header>
+
+      {{ include.item.content  | markdownify }}
+
+      {% if include.item.link_url %}
+        <ul class="actions">
+          <li>
+            <a href="{{ include.item.link_url }}" class="button">
+              {{ include.item.link_text }}
+            </a>
+          </li>
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</section>

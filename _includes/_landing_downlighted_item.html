@@ -1,0 +1,19 @@
+<section id="three">
+  <div class="inner">
+    <header class="major">
+      <h2>{{ include.item.title }}</h2>
+    </header>
+    
+    {{ include.item.content | markdownify }}
+
+    {% if include.item.link_url %}
+      <ul class="actions">
+        <li>
+          <a href="{{ include.item.link_url }}" class="button">
+            {{ include.item.link_text }}       
+          </a>
+        </li>
+      </ul>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,31 @@
+---
+layout:   post
+---
+
+{{ content }}
+
+{% assign collection = site.collections | where: "label", page.collection | first %}
+{% assign items = collection.docs | sort: 'order' %}
+
+<div class="row">
+  {% for post in items %}
+    {% assign loopindex = forloop.index | modulo: 3 %}
+    {% if loopindex == 0 %}
+      <div class="4u$ 12u$(medium)">
+    {% else %}
+      <div class="4u 12u$(medium)">
+    {% endif %}
+      <a href="{{ post.url | absolute_url }}">
+        <div class="box">
+          <h3>{{ post.title }}</h2>
+          {% if post.image %}
+            <span class="image fit">
+              <img src="{{ post.image | absolute_url }}" alt="" />
+            </span>
+          {% endif %}
+          <p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
