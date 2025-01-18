@@ -1,0 +1,18 @@
+menu: Menú
+contact:
+  title: Parlem-ne
+  description: En què podem ajudar-te?
+  method:
+    email: Email
+    phone: Telèfon
+    address: Adreça
+  form:
+    email: Email
+    name: Nom
+    message: Missatge
+    submit: Enviar
+    clear: Esborrar
+footer:
+  copyright:
+    - title: "WebDev:"
+      txt: "[Agustí B.R.](https://www.agusti.cat)"
