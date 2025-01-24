@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   The Native Bloom Initiative is a non-profit organization based in New Jersey
   with the goal of restoring native polinator species to the area.
 #baseurl: "/nativebloom2.github.io/nativebloom2"
-url: "https://nativebloominitiative.org" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://nativebloominitiative.org/nativebloom2.github.io/nativebloom2" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 instagram_url: "https://www.instagram.com/nativebloominitiative/"
