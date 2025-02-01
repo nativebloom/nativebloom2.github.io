@@ -1,0 +1,204 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+/* Header */
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 15px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url("flower.JPG");
+    color: white;
+    padding: 80px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Dark transparent overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(50, 50, 50, 0.5); /* Transparent gray backdrop */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+}
+
+.project-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 15px;
+}
+
+/* Mobile menu styling */
+.mobile-menu-button {
+    display: none;
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+    .mobile-menu-button {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #4CAF50;
+        padding: 10px;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+}
+
+/* Scroll Animation */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Executive Board Section */
+#executive-board {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f5f5f5;
+}
+
+/* Text Container to Match Executive Cards */
+.executive-board-text {
+    max-width: 900px; /* Adjust based on the number of executive cards */
+    margin: 0 auto; /* Centers the text */
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 0 20px; /* Adds some padding for smaller screens */
+    word-wrap: break-word;
+}
+
+/* Grid Layout for Executive Cards */
+.executive-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Individual Executive Cards */
+.executive-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px; /* Keeps card width consistent */
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+/* Ensures executive card text stays inside */
+.executive-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Executive Images */
+.executive-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
