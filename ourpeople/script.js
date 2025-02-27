@@ -11,6 +11,32 @@ document.addEventListener("DOMContentLoaded", function () {
         nav.classList.toggle("open");
     });
 
+    // Ensure the menu is hidden by default on mobile
+    function checkScreenWidth() {
+        if (window.innerWidth <= 768) {
+            nav.classList.remove("open");
+            nav.style.display = "none"; // Initially hide the menu on mobile
+            mobileMenuButton.style.display = "block"; // Show the menu button
+        } else {
+            nav.classList.remove("open");
+            nav.style.display = "flex"; // Make the menu visible on desktop
+            mobileMenuButton.style.display = "none"; // Hide the menu button on desktop
+        }
+    }
+
+    // Toggle the menu on button click
+    mobileMenuButton.addEventListener("click", function () {
+        if (nav.classList.contains("open")) {
+            nav.style.display = "block"; // Show the menu
+        } else {
+            nav.style.display = "none"; // Hide the menu
+        }
+    });
+
+    // Run checkScreenWidth function to ensure proper display
+    checkScreenWidth();
+    window.addEventListener("resize", checkScreenWidth);
+
     // Scroll animations
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
