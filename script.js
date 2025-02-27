@@ -1,18 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scrolling for navigation links
-//    document.querySelectorAll("nav ul li a").forEach(anchor => {
-//        anchor.addEventListener("click", function (e) {
-//            e.preventDefault();
-//            const targetId = this.getAttribute("href").substring(1);
-//            const targetElement = document.getElementById(targetId);
-//            if (targetElement) {
-//                window.scrollTo({
-//                    top: targetElement.offsetTop - 50,
-//                    behavior: "smooth"
-//                });
-//            }
-//        });
-//    });
 
     // Mobile menu toggle (if needed)
     const mobileMenuButton = document.createElement("button");
@@ -24,6 +10,32 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileMenuButton.addEventListener("click", function () {
         nav.classList.toggle("open");
     });
+
+    // Ensure the menu is hidden by default on mobile
+    function checkScreenWidth() {
+        if (window.innerWidth <= 768) {
+            nav.classList.remove("open");
+            nav.style.display = "none"; // Initially hide the menu on mobile
+            mobileMenuButton.style.display = "block"; // Show the menu button
+        } else {
+            nav.classList.remove("open");
+            nav.style.display = "flex"; // Make the menu visible on desktop
+            mobileMenuButton.style.display = "none"; // Hide the menu button on desktop
+        }
+    }
+
+    // Toggle the menu on button click
+    mobileMenuButton.addEventListener("click", function () {
+        if (nav.classList.contains("open")) {
+            nav.style.display = "block"; // Show the menu
+        } else {
+            nav.style.display = "none"; // Hide the menu
+        }
+    });
+
+    // Run checkScreenWidth function to ensure proper display
+    checkScreenWidth();
+    window.addEventListener("resize", checkScreenWidth);
 
     // Scroll animations
     const observer = new IntersectionObserver(entries => {
